@@ -9,7 +9,7 @@ using WebApiWithEF.Models;
 namespace WebApiWithEF.Migrations
 {
     [DbContext(typeof(EmpDbContext))]
-    [Migration("20210906110030_Initial")]
+    [Migration("20210908112804_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,44 @@ namespace WebApiWithEF.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("WebApiWithEF.Models.User", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            Password = "user1",
+                            UserName = "user1"
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            Password = "user2",
+                            UserName = "user2"
+                        },
+                        new
+                        {
+                            UserId = 3,
+                            Password = "user3",
+                            UserName = "user3"
+                        });
                 });
 #pragma warning restore 612, 618
         }

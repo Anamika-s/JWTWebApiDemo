@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "A3tA66aeZJoPfQyW/LKkUoYH8ZUkmqmP0+3vaEZF8n/8VcH88n3pcwioaxhr1yN1WO4ElRhvpguvMW+VGZcbIQ==",
+  "dgSpecHash": "NsmQ+grHjbZU0O3yKEnF/QyQSd1hKaGE8nn0T/kcBHZerenzVVjVhQ+/5Gn0Nwb0NrPgbGLMuaadDJhojZShew==",
   "success": true,
   "projectFilePath": "C:\\Users\\admivm\\source\\repos\\WebApiWithEF\\WebApiWithEF\\WebApiWithEF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admivm\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\admivm\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.16\\microsoft.aspnetcore.authentication.jwtbearer.3.1.16.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\admivm\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
