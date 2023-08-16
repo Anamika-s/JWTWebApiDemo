@@ -17,12 +17,21 @@ namespace WebApiWithEF.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly EmpDbContext _context;
+        List<User> users = null;
         private readonly  IConfiguration _config ;
-        public AuthenticationController(EmpDbContext context, IConfiguration config)
+        public AuthenticationController(IConfiguration config)
         {
-            _context = context;
             _config = config;
+           if(users==null)
+            {
+                users = new List<User>()
+                {
+                     new User(){UserId=101, UserName="user1",
+                     Password="pass"},
+                      new User(){UserId=102, UserName="user2",
+                     Password="pass"}
+                };
+            } 
         }
 
         // GET: api/Authentication
@@ -42,7 +51,7 @@ namespace WebApiWithEF.Controllers
 
         public User Authenticate(User user)
         {
-            User obj = _context.Users.FirstOrDefault(x => x.UserName == user.UserName && x.Password == user.Password);
+            User obj = users.FirstOrDefault(x => x.UserName == user.UserName && x.Password == user.Password);
             return user;
 
         }
@@ -67,7 +76,7 @@ namespace WebApiWithEF.Controllers
 
         private bool UserExists(int id)
         {
-            return _context.Users.Any(e => e.UserId == id);
+            return  users.Any(e => e.UserId == id);
         }
     }
 }

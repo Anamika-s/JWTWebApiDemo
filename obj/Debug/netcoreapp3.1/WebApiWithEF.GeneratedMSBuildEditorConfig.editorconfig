@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = WebApiWithEF
+build_property.ProjectDir = C:\CGI-Demos\JWTWebApiDemo\

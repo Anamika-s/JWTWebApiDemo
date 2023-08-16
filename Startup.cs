@@ -34,20 +34,19 @@ namespace WebApiWithEF
       .AddJwtBearer(options =>
       {
           options.TokenValidationParameters = new TokenValidationParameters
-                          {
-                              ValidateIssuer = true,
-                              ValidateAudience = true,
-                              ValidateLifetime = true,
-                              ValidateIssuerSigningKey = true,
-                              ValidIssuer = Configuration["Jwt:Issuer"],
-                              ValidAudience = Configuration["Jwt:Issuer"],
-                              IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
-                          };
-        }
+          {
+              ValidateIssuer = true,
+              ValidateAudience = true,
+              ValidateLifetime = true,
+              ValidateIssuerSigningKey = true,
+              ValidIssuer = Configuration["Jwt:Issuer"],
+              ValidAudience = Configuration["Jwt:Issuer"],
+              IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+          };
+      }
 
                 );
             services.AddControllers();
-            services.AddDbContext<EmpDbContext>(op=>op.UseSqlServer(Configuration["ConnectionStrings:EmployeeDbContext"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
